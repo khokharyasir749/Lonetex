@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-lonetex-primary: #064E3B;
+    --color-lonetex-forest: #0F5132;
+    --color-lonetex-accent: #FFC700;
+    --color-lonetex-surface: #FFFFFF;
+  }
+
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-900 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Cinematic Hero Zoom Animation */
+  @keyframes heroZoom {
+    0% {
+      transform: scale(1.0);
+    }
+    100% {
+      transform: scale(1.12);
+    }
+  }
+
+  .animate-hero-zoom {
+    animation: heroZoom 4.5s ease-out forwards;
+    will-change: transform;
+    transform-origin: center center;
+    backface-visibility: hidden;
+  }
+}
+
+@layer components {
+  /* Action Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-none bg-[#064E3B] text-white font-heading font-semibold text-sm transition-all duration-200 hover:bg-[#043d2e] active:scale-[0.98] focus:outline-none;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-none bg-[#FFC700] hover:bg-[#ffb700] text-slate-950 font-heading font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 active:scale-[0.98] shadow-md;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-none bg-[#25D366] hover:bg-[#1ebe5b] text-white font-heading font-bold text-sm transition-all duration-200 hover:shadow-lg active:scale-[0.98] focus:outline-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-none bg-white border border-slate-300 text-slate-700 font-heading font-semibold text-sm transition-all duration-200 hover:bg-slate-50 hover:border-slate-400 hover:text-slate-900 active:scale-[0.98];
+  }
+}
+
+/* Custom Scrollbar for Smooth Exploration */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

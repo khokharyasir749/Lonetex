@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Centered Yellow Oval Emblem with Vibrant Royal Blue Stroke -->
+  <ellipse cx="50" cy="50" rx="47" ry="28" fill="#FFC700" stroke="#2B4C8C" stroke-width="4.5" />
+  <!-- Inner Accent Ring -->
+  <ellipse cx="50" cy="50" rx="42" ry="23" fill="none" stroke="#2B4C8C" stroke-width="1.2" stroke-opacity="0.3" />
+  <!-- Slanted Bold Vibrant Royal Blue Text: LONETEX -->
+  <text
+    x="50"
+    y="57"
+    text-anchor="middle"
+    font-family="'Montserrat', 'Arial Black', sans-serif"
+    font-size="14.5"
+    font-weight="900"
+    font-style="italic"
+    letter-spacing="0.5"
+    fill="#2B4C8C"
+  >LONETEX</text>
+</svg>
