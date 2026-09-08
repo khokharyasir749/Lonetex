@@ -7,7 +7,7 @@ import { useProducts } from '../context/ProductContext';
 export default function Navbar({ onOpenSearch }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { totalItemCount = 0, setIsQuoteModalOpen } = useQuote() || {};
+  const { totalItemCount = 0, setIsQuoteModalOpen, setSelectedProduct } = useQuote() || {};
   const { openAdminPanel } = useProducts() || {};
 
   useEffect(() => {
@@ -20,14 +20,17 @@ export default function Navbar({ onOpenSearch }) {
 
   const scrollToSection = (id) => {
     setIsMobileMenuOpen(false);
+    if (setSelectedProduct) setSelectedProduct(null);
     if (id === 'top') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    const elem = document.getElementById(id);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
   };
 
   return (

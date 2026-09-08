@@ -8,11 +8,12 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import ProductModal from './components/ProductModal';
+import ProductDetailPage from './components/ProductDetailPage';
 import QuoteCartModal from './components/QuoteCartModal';
 import SearchModal from './components/SearchModal';
 import AdminDashboard from './components/AdminDashboard';
 import AdminAuthModal from './components/AdminAuthModal';
-import { QuoteProvider } from './context/QuoteContext';
+import { QuoteProvider, useQuote } from './context/QuoteContext';
 import { ProductProvider, useProducts } from './context/ProductContext';
 import {
   getBestSellingProducts,
@@ -53,7 +54,7 @@ class ErrorBoundary extends Component {
             <button
               onClick={() => {
                 try {
-                  localStorage.removeItem('lonetex_catalog_inventory_v22');
+                  localStorage.removeItem('lonetex_catalog_inventory_v29');
                 } catch (e) {
                   console.error(e);
                 }
@@ -73,6 +74,7 @@ class ErrorBoundary extends Component {
 
 function StorefrontApp() {
   const { products, currentView } = useProducts();
+  const { selectedProduct, setSelectedProduct } = useQuote();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // Group current catalog into sections dynamically
@@ -106,6 +108,38 @@ function StorefrontApp() {
   // If active view is Admin Dashboard, render admin panel directly
   if (currentView === 'admin') {
     return <AdminDashboard />;
+  }
+
+  // If a product is selected, render the dedicated full-page Product Detail view
+  if (selectedProduct) {
+    return (
+      <div className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-emerald-800 selection:text-white">
+        {/* Top Announcement Bar */}
+        <AnnouncementBar />
+
+        {/* Navigation Bar */}
+        <Navbar onOpenSearch={() => setIsSearchOpen(true)} />
+
+        {/* Dedicated Full-Page Product Detail View */}
+        <main className="flex-1">
+          <ProductDetailPage
+            product={selectedProduct}
+            onBack={() => setSelectedProduct(null)}
+          />
+        </main>
+
+        {/* Light Minimalist Footer */}
+        <Footer />
+
+        {/* Floating Circular Back-To-Top Button */}
+        <BackToTop />
+
+        {/* Modals & Overlays */}
+        <QuoteCartModal />
+        <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+        <AdminAuthModal />
+      </div>
+    );
   }
 
   return (

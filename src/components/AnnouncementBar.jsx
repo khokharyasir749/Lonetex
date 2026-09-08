@@ -1,13 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Instagram, Facebook, Linkedin, Globe, Phone } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Instagram, Facebook, Linkedin, Phone } from 'lucide-react';
 import { LONETEX_COMPANY } from '../data/lonetexProducts';
 
 export default function AnnouncementBar() {
-  const announcements = LONETEX_COMPANY.tickerAnnouncements || [
-    "📍 VISIT OUR LAHORE SHOWROOM — KHAIRA RD, KHAIRA, LAHORE",
-    "📞 Call: 0345-8177695 · 0327-7771764 · 042-35253436 · +966 542 863 980 · +966 598 481 826 · +966 56 747 1842",
-    "💼 REQUEST A BULK QUOTE — CONTACT US ONLINE OR VIA WHATSAPP",
-    "📦 WHOLESALE SUPPLIER — BULK ORDERS WELCOME FOR BUSINESSES & FACILITIES"
+  const announcements = [
+    {
+      icon: "📞",
+      text: "Call & WhatsApp:",
+      highlight: "0328-0790704",
+      extra: "· 0327-7771764 · 042-35253436 · +966 542 863 980"
+    },
+    {
+      icon: "📍",
+      text: "Visit Showroom:",
+      highlight: "Khaira Rd, Khaira, Lahore, Pakistan",
+      extra: "(Mon – Sat, 9:00 AM – 6:00 PM)"
+    },
+    {
+      icon: "💼",
+      text: "Institutional Supply:",
+      highlight: "Custom Yarn Specifications & Bulk Orders Welcome",
+      extra: ""
+    },
+    {
+      icon: "📦",
+      text: "Nationwide Dispatch:",
+      highlight: "Serving Pakistan & Saudi Arabia Commercial Facilities",
+      extra: ""
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,15 +52,17 @@ export default function AnnouncementBar() {
     setCurrentIndex((prev) => (prev + 1) % announcements.length);
   };
 
+  const current = announcements[currentIndex];
+
   return (
     <header className="w-full select-none z-50">
       {/* -------------------------------------------------------------
           BAR 1: Light Gray / White Utility Bar
-          - Left: Social Icons (Instagram, Facebook, LinkedIn)
+          - Left: Social Media Icons
           - Center: Bold WHOLESALE & BULK ORDERS WELCOME
           - Right: PK PAKISTAN Country Indicator
       ------------------------------------------------------------- */}
-      <div className="bg-[#f8f9fa] text-slate-700 border-b border-slate-200 text-xs py-2 px-4">
+      <div className="bg-[#F8FAFC] text-slate-600 border-b border-slate-200/80 text-xs py-1.5 px-4">
         <div className="container mx-auto flex items-center justify-between gap-4">
           
           {/* Left: Social Media Icons */}
@@ -49,7 +71,7 @@ export default function AnnouncementBar() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-pink-600 transition-colors"
+              className="text-slate-400 hover:text-[#0A1D37] transition-colors"
               title="Lonetex on Instagram"
               aria-label="Instagram"
             >
@@ -59,7 +81,7 @@ export default function AnnouncementBar() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-blue-600 transition-colors"
+              className="text-slate-400 hover:text-[#0A1D37] transition-colors"
               title="Lonetex on Facebook"
               aria-label="Facebook"
             >
@@ -69,7 +91,7 @@ export default function AnnouncementBar() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-blue-700 transition-colors"
+              className="text-slate-400 hover:text-[#0A1D37] transition-colors"
               title="Lonetex on LinkedIn"
               aria-label="LinkedIn"
             >
@@ -78,12 +100,12 @@ export default function AnnouncementBar() {
           </div>
 
           {/* Center: Wholesale Announcement */}
-          <div className="text-center font-heading font-bold text-[11px] sm:text-xs uppercase tracking-wider text-slate-800">
+          <div className="text-center font-heading font-bold text-[11px] sm:text-xs uppercase tracking-wider text-[#0A1D37]">
             <span>WHOLESALE &amp; BULK ORDERS WELCOME</span>
           </div>
 
           {/* Right: Country Indicator */}
-          <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-700">
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-600">
             <span className="text-base leading-none">🇵🇰</span>
             <span>PK PAKISTAN</span>
           </div>
@@ -92,12 +114,12 @@ export default function AnnouncementBar() {
       </div>
 
       {/* -------------------------------------------------------------
-          BAR 2: Rotating Marquee / Ticker with Interactive < > Arrows
-          - Background: Deep Industrial Emerald / Charcoal
-          - Content: Cycling official showroom, contact, and RFQ messages
+          BAR 2: Clean Minimalist White Ticker Bar
+          - Background: Pure White with subtle bottom border
+          - Typography: Slate text with bold deep navy numbers & links
       ------------------------------------------------------------- */}
       <div
-        className="bg-[#022c22] text-white py-2 px-4 border-b border-emerald-950 transition-colors"
+        className="bg-white text-slate-700 py-2 px-4 border-b border-slate-200/80 transition-colors"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -106,26 +128,42 @@ export default function AnnouncementBar() {
           {/* Left Arrow (<) */}
           <button
             onClick={handlePrev}
-            className="p-1 rounded-full hover:bg-emerald-900/80 text-emerald-300 hover:text-white transition-all shrink-0 active:scale-95"
+            className="p-1 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-all shrink-0 active:scale-95"
             aria-label="Previous announcement"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
 
-          {/* Announcement Text with Fade In Animation */}
+          {/* Announcement Text with High Contrast & Navy Accents */}
           <div className="flex-1 text-center overflow-hidden px-2">
             <div
               key={currentIndex}
-              className="text-[11px] sm:text-xs font-heading font-medium tracking-wide text-emerald-100 animate-fade-in truncate"
+              className="text-xs sm:text-sm font-heading font-medium tracking-wide text-slate-600 animate-fade-in truncate flex items-center justify-center gap-1.5"
             >
-              {announcements[currentIndex]}
+              <span>{current.icon}</span>
+              <span className="text-slate-500">{current.text}</span>
+              {current.highlight.includes("0328-0790704") ? (
+                <a
+                  href="tel:03280790704"
+                  className="text-[#0A1D37] font-bold hover:text-blue-600 transition-colors"
+                >
+                  {current.highlight}
+                </a>
+              ) : (
+                <span className="text-[#0A1D37] font-bold">{current.highlight}</span>
+              )}
+              {current.extra && (
+                <span className="text-slate-400 font-normal hidden md:inline">
+                  {current.extra}
+                </span>
+              )}
             </div>
           </div>
 
           {/* Right Arrow (>) */}
           <button
             onClick={handleNext}
-            className="p-1 rounded-full hover:bg-emerald-900/80 text-emerald-300 hover:text-white transition-all shrink-0 active:scale-95"
+            className="p-1 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-all shrink-0 active:scale-95"
             aria-label="Next announcement"
           >
             <ChevronRight className="h-4 w-4" />

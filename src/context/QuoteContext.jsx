@@ -13,7 +13,14 @@ export function QuoteProvider({ children }) {
   });
 
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const [selectedProductForModal, setSelectedProductForModal] = useState(null);
+  const [selectedProduct, setSelectedProductState] = useState(null);
+
+  const setSelectedProduct = (product) => {
+    setSelectedProductState(product);
+    if (product && typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
+  };
 
   useEffect(() => {
     try {
@@ -75,8 +82,10 @@ export function QuoteProvider({ children }) {
         totalItemCount,
         isQuoteModalOpen,
         setIsQuoteModalOpen,
-        selectedProductForModal,
-        setSelectedProductForModal
+        selectedProduct,
+        setSelectedProduct,
+        selectedProductForModal: selectedProduct,
+        setSelectedProductForModal: setSelectedProduct
       }}
     >
       {children}

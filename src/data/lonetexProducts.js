@@ -9,11 +9,11 @@ export const LONETEX_COMPANY = {
   name: "Lonetex",
   tagline: "Come Clean",
   fullTagline: "Come Clean — Professional Cleaning Products & Uniforms",
-  phone: "+92 345 8177695",
-  phoneDisplay: "0345-8177695",
+  phone: "+92 328 0790704",
+  phoneDisplay: "0328-0790704",
   altPhones: ["0327-7771764", "042-35253436", "+966 542 863 980", "+966 598 481 826", "+966 56 747 1842"],
   headOfficePhone: "042-35253436",
-  email: "info@lonetex.com.pk",
+  email: "khokharyasir749@gmail.com",
   factoryAddress: "Behind Kingston College, Main Canal Road, Lahore, Pakistan",
   headOffice: "71-C3 Gulberg, Lahore, Pakistan",
   showroomAddress: "Khaira Rd, Khaira, Lahore, Pakistan",
@@ -23,11 +23,11 @@ export const LONETEX_COMPANY = {
     phoneRaw: "966542863980",
   },
   operatingHours: "Monday – Saturday: 9:00 AM – 6:00 PM (PKT / AST)",
-  whatsappNumber: "923458177695",
+  whatsappNumber: "923280790704",
   announcementText: "WHOLESALE & BULK ORDERS WELCOME",
   tickerAnnouncements: [
     "📍 VISIT OUR LAHORE SHOWROOM — KHAIRA RD, KHAIRA, LAHORE",
-    "📞 Call: 0345-8177695 · 0327-7771764 · 042-35253436 · +966 542 863 980 · +966 598 481 826 · +966 56 747 1842",
+    "📞 Call: 0328-0790704 · 0327-7771764 · 042-35253436 · +966 542 863 980 · +966 598 481 826 · +966 56 747 1842",
     "💼 REQUEST A BULK QUOTE — CONTACT US ONLINE OR VIA WHATSAPP",
     "📦 WHOLESALE SUPPLIER — BULK ORDERS WELCOME FOR BUSINESSES & FACILITIES"
   ]

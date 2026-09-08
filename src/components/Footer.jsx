@@ -23,10 +23,10 @@ export default function Footer() {
             </div>
             <div className="space-y-1">
               <a 
-                href="tel:03458177695" 
+                href="tel:03280790704" 
                 className="text-[#0A1D37] font-bold text-sm block hover:text-blue-700 transition"
               >
-                0345-8177695
+                0328-0790704
               </a>
               <a 
                 href="tel:03277771764" 
@@ -101,10 +101,10 @@ export default function Footer() {
               EMAIL
             </div>
             <a 
-              href="mailto:info@lonetex.com.pk" 
+              href="mailto:khokharyasir749@gmail.com" 
               className="text-[#0A1D37] font-bold text-sm block hover:text-blue-700 transition"
             >
-              info@lonetex.com.pk
+              khokharyasir749@gmail.com
             </a>
             <div className="text-slate-400 text-xs font-semibold tracking-wider uppercase mt-4 mb-1">
               HOURS
