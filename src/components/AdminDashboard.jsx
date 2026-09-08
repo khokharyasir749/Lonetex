@@ -3,7 +3,7 @@ import {
   Package, Plus, Search, Filter, Edit, Trash2, RotateCcw,
   ArrowLeft, LogOut, CheckCircle2, XCircle, AlertTriangle,
   Image as ImageIcon, Tag, FileText, Check, X, ShieldAlert,
-  Boxes, Sparkles, Layers, RefreshCw
+  Boxes, Layers, RefreshCw
 } from 'lucide-react';
 import { useProducts } from '../context/ProductContext';
 import { CATEGORIES, DEFAULT_PRODUCT_IMAGE } from '../data/lonetexProducts';

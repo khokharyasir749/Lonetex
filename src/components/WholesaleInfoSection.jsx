@@ -1,5 +1,5 @@
 import React from 'react';
-import { Factory, MessageSquare, PhoneCall, Sparkles } from 'lucide-react';
+import { Factory, MessageSquare, PhoneCall } from 'lucide-react';
 import { LONETEX_COMPANY } from '../data/lonetexProducts';
 
 export default function WholesaleInfoSection() {
@@ -25,7 +25,6 @@ export default function WholesaleInfoSection() {
           <div className="lg:col-span-7 space-y-6">
             
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-[#FFC700] px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase backdrop-blur-sm shadow-sm">
-              <Sparkles className="h-3.5 w-3.5" />
               <span>ABOUT LONETEX MANUFACTURER</span>
             </div>
 

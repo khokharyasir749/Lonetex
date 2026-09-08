@@ -3,7 +3,7 @@ import { lonetexProducts as initialFactoryProducts, DEFAULT_PRODUCT_IMAGE } from
 
 const ProductContext = createContext();
 
-const STORAGE_KEY = 'lonetex_catalog_inventory_v29';
+const STORAGE_KEY = 'lonetex_catalog_inventory_v30';
 const AUTH_KEY = 'lonetex_admin_auth';
 export const ADMIN_DEFAULT_PASSCODE = 'lonetex2026';
 

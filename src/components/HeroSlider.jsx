@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, MessageSquare, ShieldCheck, Factory, Truck, Sparkles, ChevronLeft, ChevronRight, Globe2 } from 'lucide-react';
+import { ArrowRight, MessageSquare, ShieldCheck, Factory, Truck, ChevronLeft, ChevronRight, Globe2 } from 'lucide-react';
 import { LONETEX_COMPANY, DEFAULT_PRODUCT_IMAGE } from '../data/lonetexProducts';
 
 export default function HeroSlider({ onExploreCatalog }) {

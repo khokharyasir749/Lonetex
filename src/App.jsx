@@ -54,7 +54,7 @@ class ErrorBoundary extends Component {
             <button
               onClick={() => {
                 try {
-                  localStorage.removeItem('lonetex_catalog_inventory_v29');
+                  localStorage.removeItem('lonetex_catalog_inventory_v30');
                 } catch (e) {
                   console.error(e);
                 }
